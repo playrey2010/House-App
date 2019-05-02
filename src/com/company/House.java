@@ -1,14 +1,15 @@
 package com.company;
 
 public class House {
-    private int floors = 0;
+    private int floors;
     private int windows = 0;
     private int doors = 0;
     private int sqft = 0;
-    private String salesPrice = "";
+    private String salesPrice;
 
     public House(){
-
+        floors = 0;
+        salesPrice = "";
     }
 
 
