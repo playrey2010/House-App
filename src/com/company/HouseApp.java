@@ -1,44 +1,19 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class HouseApp {
 
-    public static int getFloors(){
-        int floors = 5;
-        return floors;
-    }
-
     public static void main(String[] args) {
+        House presentHome = new House(2, 10, 3, 2000, 30000);
+        presentHome.setSalesPrice(35000);
+        System.out.println("My present home has " + presentHome.toString());
 
-        ArrayList<House> myHomes = new ArrayList<House>();
-
-        House a = new House();
-
-        a.setFloors(2);
-        a.setWindows(10);
-        a.setDoors(3);
-        a.setSqft(2000);
-        a.setSalesPrice("$300,000");
-        myHomes.add(a);
-
-        System.out.println("My present home has " + getFloors()  + " or " + a.getFloors() + " floors," + " " + a.getWindows() + " windows," + " and  "
-                + a.getDoors() + " doors. It is " + a.getSqft() + " sq ft and worth " + a.getSalesPrice() + ".");
-
-        House b = new House();
-        b.setFloors(3);
-        b.setWindows(20);
-        b.setDoors(4);
-        b.setSqft(4000);
-        b.setSalesPrice("$600,000");
-        myHomes.add(b);
-
-        System.out.println("My future home has " + b.getFloors() + " floors," + " " + b.getWindows() + " windows," + " and  "
-                + b.getDoors() + " doors. It is " + b.getSqft() + " sq ft and worth " + b.getSalesPrice() + ".");
-
-        for (House h:myHomes){
-            System.out.println("My square footage is "+ h.getSqft());
-        }
+        House futureHome = new House();
+        futureHome.setDoors(15);
+        futureHome.setFloors(6);
+        futureHome.setSalesPrice(150000.998);
+        futureHome.setSqFt(1500);
+        futureHome.setWindows(20);
+        System.out.println("My future home has " + futureHome.toString());
 
     }
 }

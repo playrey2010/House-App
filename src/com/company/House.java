@@ -1,24 +1,36 @@
 package com.company;
 
+import java.text.DecimalFormat;
+
 public class House {
+
     private int floors;
-    private int windows = 0;
-    private int doors = 0;
-    private int sqft = 0;
-    private String salesPrice;
+    private int windows;
+    private int doors;
+    private int sqFt;
+    private double salesPrice;
 
     public House(){
-        floors = 0;
-        salesPrice = "";
+
     }
 
-
-    public int getFloors() {
-        return floors;
-    }
-
-    public void setFloors(int floors) {
+    public House(int floors){
         this.floors = floors;
+    }
+
+    public House(int floors, int windows, int doors, int sqFt, double salesPrice) {
+        this.floors = floors;
+        this.windows = windows;
+        this.doors = doors;
+        this.sqFt = sqFt;
+        this.salesPrice = salesPrice;
+    }
+
+    public void setFloors(int floors){
+        this.floors = floors;
+    }
+    public int getFloors(){
+        return floors;
     }
 
     public int getWindows() {
@@ -37,21 +49,29 @@ public class House {
         this.doors = doors;
     }
 
-    public int getSqft() {
-        return sqft;
+    public int getSqFt() {
+        return sqFt;
     }
 
-    public void setSqft(int sqft) {
-        this.sqft = sqft;
+    public void setSqFt(int sqFt) {
+        this.sqFt = sqFt;
     }
 
     public String getSalesPrice() {
-        return salesPrice;
+        DecimalFormat df2 = new DecimalFormat("#.00");
+        return df2.format(salesPrice);
     }
 
-    public void setSalesPrice(String salesPrice) {
+    public void setSalesPrice(double salesPrice) {
         this.salesPrice = salesPrice;
     }
 
-
+    @Override
+    public String toString(){
+        return getFloors() + " floors " +
+                getWindows() + " windows " +
+                getDoors() + " doors. It is " +
+                getSqFt() + " sq ft and worth $" +
+                getSalesPrice();
+    }
 }
