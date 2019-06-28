@@ -16,7 +16,7 @@ Assign whatever values you'd like for your "futureHouse",
 
 For your output, print out:
 
-"My present home has 2 floors, 10 windows, and 3 doors. It is worth $30,000 and it's 2000 sq ft."
+"My present home has 2 floors, 10 windows, and 3 doors. It is worth $300,000 and it's 2000 sq ft."
 
 Print a similar statement for your future home:
 
