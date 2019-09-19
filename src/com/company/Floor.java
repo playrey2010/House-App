@@ -1,8 +1,18 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Floor {
     private String tileMaterial;
     private int amtOfTiles;
+
+    public void inputFloor(Scanner sc) {
+        System.out.print("Please enter the tile material: ");
+        setTileMaterial(sc.nextLine());
+        System.out.print("Please enter the amount of tiles: ");
+        setAmtOfTiles(sc.nextInt());
+        sc.nextLine();
+    }
 
 
     public String getTileMaterial() {

@@ -1,8 +1,18 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Door {
     private String doorMaterial;
     private int amtOfDoors;
+
+    public void inputDoor(Scanner sc) {
+        System.out.print("Please enter the door material: ");
+        setDoorMaterial(sc.nextLine());
+        System.out.print("Please enter the amount of doors: ");
+        setAmtOfDoors(sc.nextInt());
+        sc.nextLine();
+    }
 
     @Override
     public String toString() {

@@ -1,9 +1,21 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Window {
     private String windowMaterial;
     private String windowShape;
     private int amtOfWindows;
+
+    public void inputWindow(Scanner sc) {
+        System.out.print("Please enter the window material: ");
+        setWindowMaterial(sc.nextLine());
+        System.out.print("Please enter the window shape: ");
+        setWindowShape(sc.nextLine());
+        System.out.print("Please enter the amount of windows: ");
+        setAmtOfWindows(sc.nextInt());
+        sc.nextLine();
+    }
 
     @Override
     public String toString() {

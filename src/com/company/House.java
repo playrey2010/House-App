@@ -1,8 +1,8 @@
 package com.company;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class House {
 
@@ -13,7 +13,45 @@ public class House {
     private double salesPrice;
 
     public House(){
+    }
 
+    public void inputAllInformation (Scanner sc) {
+        inputFloors(sc);
+        window = new Window();
+        window.inputWindow(sc);
+        door = new Door();
+        door.inputDoor(sc);
+        inputSqFeet(sc);
+        inputSalesPrice(sc);
+    }
+
+    public void inputSqFeet (Scanner sc) {
+        System.out.print("Please enter the amount of square feet: ");
+        setSqFt(sc.nextInt());
+        sc.nextLine();
+    }
+
+    public void inputSalesPrice(Scanner sc) {
+        System.out.print("Please enter the sales price for the house: ");
+        setSalesPrice(sc.nextDouble());
+        sc.nextLine();
+    }
+
+    public void inputFloors (Scanner sc) {
+        int limit = 0;
+        Floor floor;
+        ArrayList<Floor> tempFloors = new ArrayList<>();
+
+        System.out.print("Please enter the amount of floors: ");
+        limit = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i<limit; i++) {
+            floor = new Floor();
+            floor.inputFloor(sc);
+            tempFloors.add(floor);
+        }
+
+        setFloors(tempFloors);
     }
 
     public String displayFloorsInfo() {
@@ -30,7 +68,7 @@ public class House {
 
     @Override
     public String toString() {
-        String info = "This is a house: \n";
+        String info = "This is your house: \n";
         info += displayFloorsInfo() + "\n" + getWindow().toString() + "\n" + getDoor().toString()
                 + "\n" + "It is " + getSqFt() + " square feet and is up for sale at " + getSalesPrice() + ".";
         return info;
